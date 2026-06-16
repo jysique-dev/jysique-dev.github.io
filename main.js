@@ -43,8 +43,36 @@ class SkillGroup {
   }
 }
 
+class ContactLink {
+  constructor({ icon, label, url }) {
+    this.icon  = icon;
+    this.label = label;
+    this.url   = url;
+  }
+ 
+  render() {
+    const external = !this.url.startsWith('mailto:');
+    return `
+      <a href="${this.url}" class="contact-link"
+        ${external ? 'target="_blank" rel="noopener"' : ''}>
+        <span class="icon">${this.icon}</span>
+        <span>${this.label}</span>
+      </a>`;
+  }
+}
+
+/* ── Tus contactos ── */
+const contacts = [
+  new ContactLink({ icon: '✉', label: 'Email',     url: 'joseysique@gmail.com' }),
+  new ContactLink({ icon: '⌥', label: 'GitHub',    url: 'https://github.com/jysique-dev' }),
+  new ContactLink({ icon: '▣', label: 'LinkedIn',  url: 'https://www.linkedin.com/in/jose-ysique-neciosup-49525218a/' }),
+  new ContactLink({ icon: '◈', label: 'Instagram', url: 'https://www.instagram.com/mad__forg/' }),
+  new ContactLink({ icon: '✕', label: 'Twitter',   url: 'https://x.com/mad__forg' }),
+];
+
 /* ── Tus proyectos ── */
 const projects = [
+  /*
   new Project({
     num:  1,
     name: 'Nombre del Proyecto',
@@ -66,25 +94,30 @@ const projects = [
     tags: ['TypeScript', 'Next.js'],
     url:  null,
   }),
+  */
 ];
 
 /* ── Tus habilidades ── */
 const skillGroups = [
   new SkillGroup({
-    title:  'Frontend',
-    skills: ['React / Next.js', 'TypeScript', 'CSS / Tailwind', 'HTML semántico'],
+    title:  'Programming Languages',
+    skills: ['C#', 'C++', 'Python', 'R', 'Js','PHP'],
   }),
   new SkillGroup({
-    title:  'Backend',
-    skills: ['Node.js', 'Python / FastAPI', 'REST APIs', 'PostgreSQL'],
+    title:  'Sofware',
+    skills: ['Unity3D' ,'Unreal', 'Visual Studio Code' , 'Visual Studio 2022', 'Office' , 'Latex' , 'SpringTools' , 'PostgreSQL', 'Microsoft SQL Server' , 'R Studio', 'Anaconda'],
   }),
   new SkillGroup({
     title:  'DevOps',
-    skills: ['Git / GitHub', 'Docker', 'CI/CD', 'Linux'],
+    skills: ['Git / GitHub', 'Docker'],
   }),
   new SkillGroup({
-    title:  'Otros',
-    skills: ['Diseño de sistemas', 'Testing', 'Agile / Scrum', 'Lectura de huacos'],
+    title:  'Tools',
+    skills: ['Phaser',  'Core', 'Notion' , 'Plastic', 'Maya 3D' ,'Photoshop' , 'Illustrator' , 'Trello'],
+  }),
+  new SkillGroup({
+    title:  'Another',
+    skills: ['IA', 'Testing', 'Agile / Scrum', 'Webs devs'],
   }),
 ];
 
@@ -101,6 +134,11 @@ function mount() {
   const skillsBlock = document.querySelector('.skills-block');
   if (skillsBlock) {
     skillsBlock.innerHTML = skillGroups.map(g => g.render()).join('');
+  }
+
+  const contactGrid = document.querySelector('.contact-grid');
+  if (contactGrid) {
+    contactGrid.innerHTML = contacts.map(c => c.render()).join('');
   }
 
   /* ── Año dinámico ── */
