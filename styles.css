@@ -231,6 +231,10 @@ section {
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s;
+  /* reset estilos de <a> */
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 .project-card::before {
   content: '';

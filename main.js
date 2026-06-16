@@ -1,40 +1,144 @@
-/* ── SCROLL REVEAL ── */
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12 }
-);
+/* ════════════════════════════════════════════
+   DATOS — edita solo esta sección
+   ════════════════════════════════════════════ */
 
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+class Project {
+  constructor({ num, name, desc, tags = [], url = null }) {
+    this.num  = num;
+    this.name = name;
+    this.desc = desc;
+    this.tags = tags;
+    this.url  = url;
+  }
 
-/* ── ACTIVE NAV LINK ── */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-const navObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        navLinks.forEach((link) => link.classList.remove('active'));
-        const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  },
-  { rootMargin: '-40% 0px -55% 0px' }
-);
-
-sections.forEach((s) => navObserver.observe(s));
-
-/* ── CURSOR YEAR ── */
-const eyebrow = document.querySelector('.hero-eyebrow');
-if (eyebrow) {
-  const year = new Date().getFullYear();
-  eyebrow.textContent = `// Año Moche I — 700 d.C. ↔ ${year}`;
+  render() {
+    const wrapper = this.url ? `<a href="${this.url}" target="_blank" rel="noopener" class="project-card reveal">` : `<div class="project-card reveal">`;
+    const close   = this.url ? `</a>` : `</div>`;
+    return `
+      ${wrapper}
+        <span class="project-num">${String(this.num).padStart(2, '0')}</span>
+        <h3 class="project-name">${this.name}</h3>
+        <p class="project-desc">${this.desc}</p>
+        <div class="project-tags">
+          ${this.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+      ${close}`;
+  }
 }
+
+class SkillGroup {
+  constructor({ title, skills = [] }) {
+    this.title  = title;
+    this.skills = skills;
+  }
+
+  render() {
+    return `
+      <div class="reveal">
+        <p class="skill-group-title">${this.title}</p>
+        <ul class="skill-list">
+          ${this.skills.map(s => `<li>${s}</li>`).join('')}
+        </ul>
+      </div>`;
+  }
+}
+
+/* ── Tus proyectos ── */
+const projects = [
+  new Project({
+    num:  1,
+    name: 'Nombre del Proyecto',
+    desc: 'Descripción breve del proyecto. Qué resuelve, cómo está construido, qué lo hace especial.',
+    tags: ['React', 'Node', 'Postgres'],
+    url:  'https://github.com/tuusuario/proyecto-1',
+  }),
+  new Project({
+    num:  2,
+    name: 'Nombre del Proyecto',
+    desc: 'Descripción breve del proyecto. Qué resuelve, cómo está construido, qué lo hace especial.',
+    tags: ['Python', 'FastAPI', 'Redis'],
+    url:  'https://github.com/tuusuario/proyecto-2',
+  }),
+  new Project({
+    num:  3,
+    name: 'Nombre del Proyecto',
+    desc: 'Descripción breve del proyecto. Qué resuelve, cómo está construido, qué lo hace especial.',
+    tags: ['TypeScript', 'Next.js'],
+    url:  null,
+  }),
+];
+
+/* ── Tus habilidades ── */
+const skillGroups = [
+  new SkillGroup({
+    title:  'Frontend',
+    skills: ['React / Next.js', 'TypeScript', 'CSS / Tailwind', 'HTML semántico'],
+  }),
+  new SkillGroup({
+    title:  'Backend',
+    skills: ['Node.js', 'Python / FastAPI', 'REST APIs', 'PostgreSQL'],
+  }),
+  new SkillGroup({
+    title:  'DevOps',
+    skills: ['Git / GitHub', 'Docker', 'CI/CD', 'Linux'],
+  }),
+  new SkillGroup({
+    title:  'Otros',
+    skills: ['Diseño de sistemas', 'Testing', 'Agile / Scrum', 'Lectura de huacos'],
+  }),
+];
+
+/* ════════════════════════════════════════════
+   RENDER
+   ════════════════════════════════════════════ */
+
+function mount() {
+  const projectsGrid = document.querySelector('.projects-grid');
+  if (projectsGrid) {
+    projectsGrid.innerHTML = projects.map(p => p.render()).join('');
+  }
+
+  const skillsBlock = document.querySelector('.skills-block');
+  if (skillsBlock) {
+    skillsBlock.innerHTML = skillGroups.map(g => g.render()).join('');
+  }
+
+  /* ── Año dinámico ── */
+  const eyebrow = document.querySelector('.hero-eyebrow');
+  if (eyebrow) {
+    eyebrow.textContent = `// Año Moche I — 700 d.C. ↔ ${new Date().getFullYear()}`;
+  }
+
+  /* ── Scroll reveal ── */
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+  /* ── Nav activo ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((l) => l.classList.remove('active'));
+          const active = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+  sections.forEach((s) => navObserver.observe(s));
+}
+
+document.addEventListener('DOMContentLoaded', mount);
