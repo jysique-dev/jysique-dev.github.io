@@ -63,7 +63,7 @@ class ContactLink {
 
 /* ── Tus contactos ── */
 const contacts = [
-  new ContactLink({ icon: '✉', label: 'Email',     url: 'joseysique@gmail.com' }),
+  new ContactLink({ icon: '✉', label: 'Email',     url: 'https://mail.google.com/mail/?view=cm&to=joseysique@gmail.com&su=Consulta&body=Hola,%20quisiera%20más%20información.' }),
   new ContactLink({ icon: '⌥', label: 'GitHub',    url: 'https://github.com/jysique-dev' }),
   new ContactLink({ icon: '▣', label: 'LinkedIn',  url: 'https://www.linkedin.com/in/jose-ysique-neciosup-49525218a/' }),
   new ContactLink({ icon: '◈', label: 'Instagram', url: 'https://www.instagram.com/mad__forg/' }),
