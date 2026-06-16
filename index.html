@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dev — Perfil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=VT323&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">◆ DEV</div>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#habilidades">Skills</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <p class="hero-eyebrow">// Año Moche I — 700 d.C. ↔ presente</p>
+    <h1 class="hero-title">
+      <span class="glitch" data-text="TU">TU</span>
+      <span class="glitch" data-text="NOMBRE">NOMBRE</span>
+    </h1>
+    <p class="hero-subtitle">PROGRAMADOR &nbsp;/&nbsp; BUILDER</p>
+    <p class="hero-desc">
+      Construyo herramientas digitales como los Moche construyeron sus huacos: con precisión, intención y un poco de magia oscura. Código limpio, interfaces que respiran, sistemas que duran.
+    </p>
+    <a href="#proyectos" class="hero-cta">Ver proyectos</a>
+  </section>
+
+  <!-- FRISO MOCHE 1 -->
+  <div class="friso" aria-hidden="true">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="40" fill="#0d0b08"/>
+      <g fill="none" stroke="#c8860a" stroke-width="1">
+        <line x1="0" y1="20" x2="1200" y2="20"/>
+        <line x1="0" y1="28" x2="1200" y2="28"/>
+      </g>
+      <defs>
+        <g id="step">
+          <rect width="8" height="8" y="0"/>
+          <rect width="8" height="8" x="8" y="8"/>
+          <rect width="8" height="8" x="16" y="16"/>
+          <rect width="8" height="8" x="24" y="8"/>
+          <rect width="8" height="8" x="32" y="0"/>
+        </g>
+      </defs>
+      <g fill="#c8860a" opacity="0.25">
+        <use href="#step" x="0"/><use href="#step" x="80"/><use href="#step" x="160"/>
+        <use href="#step" x="240"/><use href="#step" x="320"/><use href="#step" x="400"/>
+        <use href="#step" x="480"/><use href="#step" x="560"/><use href="#step" x="640"/>
+        <use href="#step" x="720"/><use href="#step" x="800"/><use href="#step" x="880"/>
+        <use href="#step" x="960"/><use href="#step" x="1040"/><use href="#step" x="1120"/>
+      </g>
+      <g fill="#8b2500" opacity="0.6">
+        <rect x="0" y="0" width="40" height="8"/>
+        <rect x="0" y="16" width="8" height="8"/>
+        <rect x="16" y="16" width="8" height="8"/>
+        <rect x="32" y="8" width="8" height="16"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <p class="section-label reveal">◆ Obras</p>
+    <h2 class="section-title reveal">Proyectos</h2>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <span class="project-num">01</span>
+        <h3 class="project-name">Nombre del Proyecto</h3>
+        <p class="project-desc">Descripción breve del proyecto. Qué resuelve, cómo está construido, qué lo hace especial.</p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node</span>
+          <span class="tag">Postgres</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <span class="project-num">02</span>
+        <h3 class="project-name">Nombre del Proyecto</h3>
+        <p class="project-desc">Descripción breve del proyecto. Qué resuelve, cómo está construido, qué lo hace especial.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Redis</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <span class="project-num">03</span>
+        <h3 class="project-name">Nombre del Proyecto</h3>
+        <p class="project-desc">Descripción breve del proyecto. Qué resuelve, cómo está construido, qué lo hace especial.</p>
+        <div class="project-tags">
+          <span class="tag">TypeScript</span>
+          <span class="tag">Next.js</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FRISO MOCHE 2 -->
+  <div class="friso" aria-hidden="true">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="40" fill="#0d0b08"/>
+      <g fill="none" stroke="#8b2500" stroke-width="1.5">
+        <path d="M0 20 C10 5,30 5,40 20 C50 35,70 35,80 20 C90 5,110 5,120 20 C130 35,150 35,160 20
+                 C170 5,190 5,200 20 C210 35,230 35,240 20 C250 5,270 5,280 20 C290 35,310 35,320 20
+                 C330 5,350 5,360 20 C370 35,390 35,400 20 C410 5,430 5,440 20 C450 35,470 35,480 20
+                 C490 5,510 5,520 20 C530 35,550 35,560 20 C570 5,590 5,600 20 C610 35,630 35,640 20
+                 C650 5,670 5,680 20 C690 35,710 35,720 20 C730 5,750 5,760 20 C770 35,790 35,800 20
+                 C810 5,830 5,840 20 C850 35,870 35,880 20 C890 5,910 5,920 20 C930 35,950 35,960 20
+                 C970 5,990 5,1000 20 C1010 35,1030 35,1040 20 C1050 5,1070 5,1080 20
+                 C1090 35,1110 35,1120 20 C1130 5,1150 5,1160 20 C1170 35,1190 35,1200 20"/>
+      </g>
+      <g fill="none" stroke="#c8860a" stroke-width="0.5" opacity="0.4">
+        <line x1="0" y1="10" x2="1200" y2="10"/>
+        <line x1="0" y1="30" x2="1200" y2="30"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades">
+    <p class="section-label reveal">◆ Arsenal</p>
+    <h2 class="section-title reveal">Habilidades</h2>
+    <div class="skills-block">
+
+      <div class="reveal">
+        <p class="skill-group-title">Frontend</p>
+        <ul class="skill-list">
+          <li>React / Next.js</li>
+          <li>TypeScript</li>
+          <li>CSS / Tailwind</li>
+          <li>HTML semántico</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <p class="skill-group-title">Backend</p>
+        <ul class="skill-list">
+          <li>Node.js</li>
+          <li>Python / FastAPI</li>
+          <li>REST APIs</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <p class="skill-group-title">DevOps</p>
+        <ul class="skill-list">
+          <li>Git / GitHub</li>
+          <li>Docker</li>
+          <li>CI/CD</li>
+          <li>Linux</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <p class="skill-group-title">Otros</p>
+        <ul class="skill-list">
+          <li>Diseño de sistemas</li>
+          <li>Testing</li>
+          <li>Agile / Scrum</li>
+          <li>Lectura de huacos</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FRISO MOCHE 3 -->
+  <div class="friso" aria-hidden="true">
+    <svg viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="40" fill="#0d0b08"/>
+      <g fill="#c8860a" opacity="0.2">
+        <rect x="0"  y="32" width="8" height="8"/>
+        <rect x="8"  y="24" width="8" height="16"/>
+        <rect x="16" y="16" width="8" height="24"/>
+        <rect x="24" y="24" width="8" height="16"/>
+        <rect x="32" y="32" width="8" height="8"/>
+        <rect x="40" y="32" width="8" height="8"/>
+        <rect x="48" y="24" width="8" height="16"/>
+        <rect x="56" y="16" width="8" height="24"/>
+        <rect x="64" y="24" width="8" height="16"/>
+        <rect x="72" y="32" width="8" height="8"/>
+      </g>
+      <line x1="0" y1="14" x2="1200" y2="14" stroke="#8b2500" stroke-width="1" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <!-- Degollador Moche estilizado -->
+    <svg class="moche-deity" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="50" cy="22" r="12" fill="none" stroke="#d4b896" stroke-width="2"/>
+      <circle cx="44" cy="20" r="2" fill="#d4b896"/>
+      <circle cx="56" cy="20" r="2" fill="#d4b896"/>
+      <path d="M38 10 L50 2 L62 10" fill="none" stroke="#c8860a" stroke-width="2"/>
+      <path d="M34 8 L38 10 M62 10 L66 8" stroke="#c8860a" stroke-width="1.5"/>
+      <rect x="42" y="34" width="16" height="20" rx="2" fill="none" stroke="#d4b896" stroke-width="1.5"/>
+      <path d="M42 38 L20 32 M58 38 L80 32" stroke="#d4b896" stroke-width="1.5"/>
+      <path d="M20 32 L14 26 L24 30 Z" fill="#8b2500"/>
+      <path d="M80 32 L86 26 L76 30 Z" fill="#8b2500"/>
+      <path d="M45 54 L40 72 M55 54 L60 72" stroke="#d4b896" stroke-width="1.5"/>
+      <line x1="42" y1="40" x2="58" y2="40" stroke="#8b2500" stroke-width="1"/>
+      <line x1="42" y1="46" x2="58" y2="46" stroke="#8b2500" stroke-width="1"/>
+    </svg>
+
+    <p class="section-label reveal">◆ Señales de humo</p>
+    <h2 class="section-title reveal">Contacto</h2>
+
+    <div class="contact-grid reveal">
+      <a href="mailto:tu@email.com" class="contact-link">
+        <span class="icon">✉</span>
+        <span>Email</span>
+      </a>
+      <a href="https://github.com/tuusuario" target="_blank" rel="noopener" class="contact-link">
+        <span class="icon">⌥</span>
+        <span>GitHub</span>
+      </a>
+      <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noopener" class="contact-link">
+        <span class="icon">▣</span>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    ◆ CONSTRUIDO CON CÓDIGO Y ARCILLA &nbsp;|&nbsp; NORTE DEL PERÚ &nbsp;◆
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
